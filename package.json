@@ -5,12 +5,11 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "build:win": "electron-builder --win --x64"
+    "build:win": "npx electron-builder --win --x64"
   },
   "build": {
     "appId": "cl.minvu.oguc",
     "productName": "OGUC App",
-    "copyright": "MINVU — Ordenanza General de Urbanismo y Construcciones",
     "win": {
       "target": [
         { "target": "nsis", "arch": ["x64"] }
@@ -21,9 +20,7 @@
       "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
-      "shortcutName": "OGUC App",
-      "installerLanguages": ["SpanishChile"],
-      "language": "3082"
+      "shortcutName": "OGUC App"
     },
     "files": ["main.js", "src/**/*"],
     "directories": { "output": "dist" }
