@@ -1,0 +1,35 @@
+{
+  "name": "oguc-app",
+  "version": "1.0.0",
+  "description": "OGUC + DDU — Normativa Interactiva MINVU",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build:win": "electron-builder --win --x64"
+  },
+  "build": {
+    "appId": "cl.minvu.oguc",
+    "productName": "OGUC App",
+    "copyright": "MINVU — Ordenanza General de Urbanismo y Construcciones",
+    "win": {
+      "target": [
+        { "target": "nsis", "arch": ["x64"] }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "OGUC App",
+      "installerLanguages": ["SpanishChile"],
+      "language": "3082"
+    },
+    "files": ["main.js", "src/**/*"],
+    "directories": { "output": "dist" }
+  },
+  "devDependencies": {
+    "electron": "^29.4.6",
+    "electron-builder": "^24.13.3"
+  }
+}
